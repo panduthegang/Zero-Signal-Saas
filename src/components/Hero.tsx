@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ onTestDefense, breachStatus }) => {
 
         <div className="flex flex-col md:flex-row items-start gap-12 mb-12">
           <p className="max-w-md text-sm text-text-muted leading-relaxed">
-            ZeroSignal deploys autonomous AI agents to intercept cyber threats before execution. Next-gen heuristics powered by Gemini Flash 2.5 architecture.
+            ZeroSignal orchestrates autonomous AI agents that detect and halt cyber threats pre-execution, utilizing our ZeroCore 2.5 autonomous defense engine.
           </p>
           <div className="text-xs text-text-muted">
             LATENCY
