@@ -10,7 +10,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onTestDefense, breachStatus }) => {
   return (
-    <header className="relative min-h-[90vh] flex flex-col lg:flex-row items-center justify-between px-6 py-16 md:px-16 gap-12">
+    <header className="relative min-h-[90vh] flex flex-col lg:flex-row items-center justify-between px-6 py-16 md:px-16 gap-12 pt-32">
       
       {/* Text Content */}
       <div className="w-full lg:w-1/2 z-10">
