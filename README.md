@@ -1,8 +1,8 @@
 <div align="center">
 
-![ZERO SIGNAL](https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop)
-
 # ⚡ ZERO SIGNAL
+
+![ZERO SIGNAL](public/Thumbnail.png)
 
 ### Next-Generation Autonomous AI Threat Detection System
 
@@ -80,22 +80,22 @@ This project demonstrates advanced React patterns, TypeScript integration, and s
 ### ⚡ Performance Optimized
 - **Lightning Fast**: Vite-powered development and build process
 - **Code Splitting**: Lazy loading for optimal bundle sizes
-- **Optimized Assets**: Compressed fonts and efficient SVG usage
+-- **Optimized Assets**: Compressed fonts and efficient SVG usage
 - **Smooth 60fps**: Hardware-accelerated animations
 
 ---
 
 ## 🛠 Tech Stack
 
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| **React** | UI Framework | 18.3.1 |
-| **TypeScript** | Type Safety | 5.5.3 |
-| **Vite** | Build Tool | 5.4.2 |
-| **TailwindCSS** | Styling | 3.4.1 |
-| **Lucide React** | Icons | 0.344.0 |
-| **PostCSS** | CSS Processing | 8.4.35 |
-| **ESLint** | Code Linting | 9.9.1 |
+| Technology | Purpose |
+|------------|---------|
+| ![React](https://img.shields.io/badge/React-18.3.1-61DAFB?logo=react) | UI Framework |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue?logo=typescript) | Type Safety |
+| ![Vite](https://img.shields.io/badge/Vite-5.4.2-646CFF?logo=vite) | Build Tool |
+| ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4.1-38B2AC?logo=tailwind-css) | Styling |
+| ![Lucide React](httpshttps://img.shields.io/badge/Lucide%20React-0.344.0-orange?logo=lucide) | Icons |
+| ![PostCSS](https://img.shields.io/badge/PostCSS-8.4.35-d7646a?logo=postcss) | CSS Processing |
+| ![ESLint](https://img.shields.io/badge/ESLint-9.9.1-4b32c3?logo=eslint) | Code Linting |
 
 ---
 
@@ -345,7 +345,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-### ⚡ Built with precision. Deployed with confidence.
+### Made with ❤️ by Harsh Rathod
 
 **[⬆ Back to Top](#-zero-signal)**
 
