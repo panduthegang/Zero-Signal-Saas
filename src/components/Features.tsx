@@ -1,56 +1,59 @@
-function Features() {
+
+import React from 'react';
+
+const FeatureCard: React.FC<{ id: string; title: string; desc: string; items: string[] }> = ({ id, title, desc, items }) => (
+  <div className="group relative bg-bg-card border border-border-dark p-8 hover:-translate-y-2 hover:border-gray-500 transition-all duration-300">
+    <div className="w-12 h-12 border border-gray-800 flex items-center justify-center text-white font-mono mb-6 group-hover:border-accent-green transition-colors">
+      {id}
+    </div>
+    <h3 className="text-xl font-display uppercase mb-4">{title}</h3>
+    <p className="text-sm text-text-muted mb-6 leading-relaxed">{desc}</p>
+    <ul className="space-y-2">
+      {items.map((item, i) => (
+        <li key={i} className="flex items-center gap-2 text-xs text-gray-500">
+          <span className="text-accent-green">{`>`}</span> {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
+const Features: React.FC = () => {
   const features = [
     {
-      icon: '01',
-      title: 'Neural Lace Encryption',
-      description: 'End-to-end quantum-resistant encryption wrapping every data packet leaving your local environment.',
-      items: ['256-bit AES GCM', 'Key Rotation: 10s']
+      id: "01",
+      title: "Neural Lace Encryption",
+      desc: "End-to-end quantum-resistant encryption wrapping every data packet leaving your local environment.",
+      items: ["256-bit AES GCM", "Key Rotation: 10s"]
     },
     {
-      icon: '02',
-      title: 'Predictive Heuristics',
-      description: 'Our AI doesn\'t just react; it predicts attack vectors by analyzing global threat topology in real-time.',
-      items: ['Zero-day prevention', 'Behavioral Analysis']
+      id: "02",
+      title: "Predictive Heuristics",
+      desc: "Our AI doesn't just react; it predicts attack vectors by analyzing global threat topology in real-time.",
+      items: ["Zero-day prevention", "Behavioral Analysis"]
     },
     {
-      icon: '03',
-      title: 'Ghost Protocol',
-      description: 'Obfuscates your digital footprint, making your infrastructure invisible to unauthorized network scans.',
-      items: ['IP Masking', 'Port Hopping']
+      id: "03",
+      title: "Ghost Protocol",
+      desc: "Obfuscates your digital footprint, making your infrastructure invisible to unauthorized network scans.",
+      items: ["IP Masking", "Port Hopping"]
     }
   ];
 
   return (
-    <section id="features" className="px-16 py-24 border-t border-[#222]">
-      <div className="mb-16 border-l-2 border-[#4ade80] pl-6">
-        <span className="text-[#4ade80] text-xs mb-2 block">01 // SYSTEM CAPABILITIES</span>
-        <h2 className="font-display text-4xl uppercase tracking-tight">Integrated Defense<br />Architecture</h2>
+    <section id="features" className="py-24 px-6 md:px-16 border-t border-border-dark scroll-mt-24">
+      <div className="mb-16 pl-6 border-l-2 border-accent-green">
+        <span className="block text-accent-green text-xs font-mono mb-2">01 // SYSTEM CAPABILITIES</span>
+        <h2 className="text-4xl md:text-5xl font-display font-bold uppercase leading-tight">
+          Integrated Defense<br />Architecture
+        </h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map((feature, index) => (
-          <div
-            key={index}
-            className="bg-[#0a0a0a] border border-[#222] p-8 relative hover:-translate-y-1 hover:border-[#666] transition-all"
-          >
-            <div className="text-2xl text-white mb-6 w-[50px] h-[50px] border border-[#333] flex items-center justify-center">
-              {feature.icon}
-            </div>
-            <h3 className="text-xl mb-4 text-white font-display uppercase">{feature.title}</h3>
-            <p className="text-[#666] text-sm leading-relaxed">{feature.description}</p>
-            <ul className="list-none mt-4">
-              {feature.items.map((item, idx) => (
-                <li key={idx} className="text-[#555] text-xs mb-2 flex items-center gap-2">
-                  <span className="text-[#4ade80]">&gt;</span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {features.map(f => <FeatureCard key={f.id} {...f} />)}
       </div>
     </section>
   );
-}
+};
 
 export default Features;

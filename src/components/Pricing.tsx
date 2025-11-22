@@ -1,95 +1,65 @@
-function Pricing() {
-  const plans = [
-    {
-      tier: 'OBSERVER',
-      price: 0,
-      features: [
-        { name: 'Basic Monitoring', enabled: true },
-        { name: 'Threat Alerts (Email)', enabled: true },
-        { name: 'Auto-Mitigation', enabled: false },
-        { name: 'API Access', enabled: false }
-      ],
-      buttonText: 'INITIALIZE',
-      buttonStyle: 'secondary'
-    },
-    {
-      tier: 'OPERATOR',
-      price: 49,
-      features: [
-        { name: 'Real-time Monitoring', enabled: true },
-        { name: 'Auto-Mitigation', enabled: true },
-        { name: '24/7 Support Uplink', enabled: true },
-        { name: 'Source Code Access', enabled: false }
-      ],
-      buttonText: 'UPGRADE',
-      buttonStyle: 'primary',
-      highlight: true
-    },
-    {
-      tier: 'ARCHITECT',
-      price: 299,
-      features: [
-        { name: 'Full Infrastructure Map', enabled: true },
-        { name: 'Dedicated Neural Core', enabled: true },
-        { name: 'Custom Heuristics', enabled: true },
-        { name: 'API Access', enabled: true }
-      ],
-      buttonText: 'CONTACT SALES',
-      buttonStyle: 'secondary'
-    }
-  ];
 
+import React from 'react';
+
+const Pricing: React.FC = () => {
   return (
-    <section id="pricing" className="px-16 py-24 border-t border-[#222]">
-      <div className="mb-16 border-l-2 border-[#4ade80] pl-6">
-        <span className="text-[#4ade80] text-xs mb-2 block">03 // ACCESS PROTOCOLS</span>
-        <h2 className="font-display text-4xl uppercase tracking-tight">Select Clearance<br />Level</h2>
+    <section id="access" className="py-24 px-6 md:px-16 border-t border-border-dark scroll-mt-24">
+      <div className="mb-16 pl-6 border-l-2 border-accent-green">
+        <span className="block text-accent-green text-xs font-mono mb-2">05 // ACCESS PROTOCOLS</span>
+        <h2 className="text-4xl md:text-5xl font-display font-bold uppercase leading-tight">
+          Select Clearance<br />Level
+        </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-        {plans.map((plan, index) => (
-          <div
-            key={index}
-            className={`border p-12 flex flex-col items-start relative ${
-              plan.highlight
-                ? 'border-[#4ade80] bg-[rgba(74,222,128,0.02)]'
-                : 'border-[#222]'
-            }`}
-          >
-            <span className="text-xs text-[#4ade80] mb-4 border border-[#4ade80] px-2 py-0.5">
-              {plan.tier}
-            </span>
-            <div className="text-4xl font-display mb-8">
-              ${plan.price}<span className="text-base text-[#555] font-mono">/mo</span>
-            </div>
-
-            <div className="mb-12 flex-1">
-              {plan.features.map((feature, idx) => (
-                <div
-                  key={idx}
-                  className={`mb-3 text-sm flex items-center gap-2.5 ${
-                    feature.enabled ? 'text-[#aaa]' : 'text-[#333] line-through'
-                  }`}
-                >
-                  {feature.name}
-                </div>
-              ))}
-            </div>
-
-            <button
-              className={`w-full px-8 py-4 uppercase text-xs cursor-pointer tracking-[2px] font-bold transition-all ${
-                plan.buttonStyle === 'primary'
-                  ? 'bg-white text-black border border-white hover:bg-transparent hover:text-white'
-                  : 'bg-transparent text-white border border-[#333] hover:border-white'
-              }`}
-            >
-              {plan.buttonText}
-            </button>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Plan 1 */}
+        <div className="border border-border-dark p-8 flex flex-col items-start hover:border-gray-500 transition-colors duration-300">
+          <span className="text-xs text-accent-green border border-accent-green px-2 py-1 mb-6">OBSERVER</span>
+          <div className="text-5xl font-display font-bold mb-8">$0<span className="text-base font-mono font-normal text-gray-500">/mo</span></div>
+          <div className="flex-1 w-full space-y-4 mb-12">
+            <div className="flex items-center gap-3 text-sm text-gray-400">Basic Monitoring</div>
+            <div className="flex items-center gap-3 text-sm text-gray-400">Threat Alerts (Email)</div>
+            <div className="flex items-center gap-3 text-sm text-gray-800 line-through">Auto-Mitigation</div>
+            <div className="flex items-center gap-3 text-sm text-gray-800 line-through">API Access</div>
           </div>
-        ))}
+          <button className="w-full py-4 text-xs font-bold uppercase border border-gray-800 hover:border-white hover:text-white text-gray-400 transition-all">
+            Initialize
+          </button>
+        </div>
+
+        {/* Plan 2 - Highlighted */}
+        <div className="relative border border-accent-green bg-accent-green/5 p-8 flex flex-col items-start transform md:-translate-y-4 shadow-[0_0_20px_rgba(74,222,128,0.05)]">
+          <div className="absolute top-0 right-0 bg-accent-green text-black text-[10px] font-bold px-2 py-1">RECOMMENDED</div>
+          <span className="text-xs text-accent-green border border-accent-green px-2 py-1 mb-6">OPERATOR</span>
+          <div className="text-5xl font-display font-bold mb-8">$49<span className="text-base font-mono font-normal text-gray-500">/mo</span></div>
+          <div className="flex-1 w-full space-y-4 mb-12">
+            <div className="flex items-center gap-3 text-sm text-gray-300">Real-time Monitoring</div>
+            <div className="flex items-center gap-3 text-sm text-gray-300">Auto-Mitigation</div>
+            <div className="flex items-center gap-3 text-sm text-gray-300">24/7 Support Uplink</div>
+            <div className="flex items-center gap-3 text-sm text-gray-800 line-through">Source Code Access</div>
+          </div>
+          <button className="w-full py-4 text-xs font-bold uppercase bg-white text-black hover:bg-transparent hover:text-white border border-white transition-all">
+            Upgrade
+          </button>
+        </div>
+
+        {/* Plan 3 */}
+        <div className="border border-border-dark p-8 flex flex-col items-start hover:border-gray-500 transition-colors duration-300">
+          <span className="text-xs text-accent-green border border-accent-green px-2 py-1 mb-6">ARCHITECT</span>
+          <div className="text-5xl font-display font-bold mb-8">$299<span className="text-base font-mono font-normal text-gray-500">/mo</span></div>
+          <div className="flex-1 w-full space-y-4 mb-12">
+            <div className="flex items-center gap-3 text-sm text-gray-400">Full Infrastructure Map</div>
+            <div className="flex items-center gap-3 text-sm text-gray-400">Dedicated Neural Core</div>
+            <div className="flex items-center gap-3 text-sm text-gray-400">Custom Heuristics</div>
+            <div className="flex items-center gap-3 text-sm text-gray-400">API Access</div>
+          </div>
+          <button className="w-full py-4 text-xs font-bold uppercase border border-gray-800 hover:border-white hover:text-white text-gray-400 transition-all">
+            Contact Sales
+          </button>
+        </div>
       </div>
     </section>
   );
-}
+};
 
 export default Pricing;
